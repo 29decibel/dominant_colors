@@ -1,0 +1,13 @@
+[package]
+name = "dominantcolors"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "dominantcolors"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.30.0"
