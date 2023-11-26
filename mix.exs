@@ -7,7 +7,9 @@ defmodule DominantColors.MixProject do
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package()
     ]
   end
 
@@ -18,10 +20,24 @@ defmodule DominantColors.MixProject do
     ]
   end
 
+  defp description() do
+    "Extract dominant colors from given image (using kmeans), wrapper on top of rust kmeans_colors."
+  end
+
+  defp package() do
+    [
+      name: "dominant_colors",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/29decibel/dominant_colors"}
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.30.0"}
+      {:rustler, "~> 0.30.0"},
+      {:rustler_precompiled, "~> 0.7"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 end
