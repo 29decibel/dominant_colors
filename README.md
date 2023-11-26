@@ -1,21 +1,27 @@
 # DominantColors
 
-**TODO: Add description**
+![livebook dominant colors usage](screenshots/livebook.png)
+
+> Working in progress
+
+Extract dominant colors from given image path. Wrapper around the awesome Rust library [kmeans_colors](https://github.com/okaneco/kmeans-colors).
+
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `dominant_colors` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:dominant_colors, "~> 0.1.0"}
+    {:dominant_colors, "~> 0.1.2"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/dominant_colors>.
+## Usage
+
+```elixir
+file_path = "test-image.png"
+colors = DominantColors.dominant_colors(file_path)
+# 
+```
 
