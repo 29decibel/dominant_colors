@@ -3,15 +3,22 @@ defmodule DominantColorsTest do
   doctest DominantColors
 
   test "dominant_colors" do
-    assert DominantColors.dominant_colors("./test/fixtures/test3.png") == [
-             "#bfbdbb",
-             "#2f2e2e",
-             "#a3a1a0",
-             "#d8653a",
-             "#eeedec",
-             "#171515",
-             "#7e7b7b",
-             "#4d4b4b"
-           ]
+    assert DominantColors.dominant_colors("./test/fixtures/test3.png") ==
+             {:ok,
+              [
+                "#c0bdbc",
+                "#2d2d2d",
+                "#a19f9e",
+                "#d8653a",
+                "#eeedec",
+                "#171616",
+                "#716e6e",
+                "#454242"
+              ]}
+  end
+
+  test "dominant_colors with invalid file" do
+    assert DominantColors.dominant_colors("./test/fixtures/test3.jp") ==
+             {:error, "Can not open given file"}
   end
 end
