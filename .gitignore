@@ -26,3 +26,5 @@ dominant_colors-*.tar
 /tmp/
 
 .DS_Store
+
+/priv/

@@ -2,7 +2,7 @@ defmodule DominantColors.MixProject do
   use Mix.Project
 
   # this is important as the github workflow relies on this to grab the correct version
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
@@ -29,6 +29,14 @@ defmodule DominantColors.MixProject do
 
   defp package() do
     [
+      files: [
+        "lib",
+        "native/dominantcolors/.cargo",
+        "native/dominantcolors/src",
+        "native/dominantcolors/Cargo*",
+        "checksum-*.exs",
+        "mix.exs"
+      ],
       name: "dominant_colors",
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/29decibel/dominant_colors"}
@@ -38,7 +46,7 @@ defmodule DominantColors.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.30.0"},
+      {:rustler, "~> 0.30.0", optional: true},
       {:rustler_precompiled, "~> 0.7"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
