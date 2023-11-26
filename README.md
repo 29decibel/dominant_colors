@@ -1,8 +1,11 @@
 # DominantColors
 
+> Working in progress...
+
+[Blog post](https://orchardlab.dev/posts/dominant-colors/)
+
 ![livebook dominant colors usage](screenshots/livebook.png)
 
-> Working in progress
 
 Extract dominant colors from given image path. Wrapper around the awesome Rust library [kmeans_colors](https://github.com/okaneco/kmeans-colors).
 
