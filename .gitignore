@@ -27,4 +27,7 @@ dominant_colors-*.tar
 
 .DS_Store
 
-/priv/
+/priv/native/libdominantcolors.so
+
+# The checksum files for precompiled NIFs
+checksum-*.exs
