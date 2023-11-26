@@ -2,7 +2,7 @@ defmodule DominantColors.MixProject do
   use Mix.Project
 
   # this is important as the github workflow relies on this to grab the correct version
-  @version "0.1.3"
+  @version "0.1.4"
 
   def project do
     [

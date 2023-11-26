@@ -12,7 +12,7 @@ Extract dominant colors from given image path. Wrapper around the awesome Rust l
 ```elixir
 def deps do
   [
-    {:dominant_colors, "~> 0.1.2"}
+    {:dominant_colors, "~> 0.1.4"}
   ]
 end
 ```
