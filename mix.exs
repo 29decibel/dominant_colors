@@ -1,10 +1,13 @@
 defmodule DominantColors.MixProject do
   use Mix.Project
 
+  # this is important as the github workflow relies on this to grab the correct version
+  @version "0.1.1"
+
   def project do
     [
       app: :dominant_colors,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
