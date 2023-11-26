@@ -1,6 +1,4 @@
-use kmeans_colors::{get_kmeans, Kmeans, MapColor, Sort};
-use palette::cast::from_component_slice;
-use palette::white_point::D65;
+use kmeans_colors::{get_kmeans, Kmeans};
 use palette::{FromColor, IntoColor, Lab, Srgb};
 
 #[rustler::nif]
