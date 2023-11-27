@@ -6,14 +6,14 @@ defmodule DominantColorsTest do
     assert DominantColors.dominant_colors("./test/fixtures/test3.png") ==
              {:ok,
               [
-                "#c0bdbc",
-                "#2d2d2d",
-                "#a19f9e",
-                "#d8653a",
-                "#eeedec",
                 "#171616",
+                "#2d2d2d",
+                "#454242",
                 "#716e6e",
-                "#454242"
+                "#d8653a",
+                "#a19f9e",
+                "#c0bdbc",
+                "#eeedec"
               ]}
   end
 

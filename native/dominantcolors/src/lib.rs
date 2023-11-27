@@ -1,5 +1,5 @@
-use kmeans_colors::{get_kmeans, Kmeans};
-use palette::{FromColor, IntoColor, Lab, Srgb};
+use kmeans_colors::{get_kmeans, Kmeans, Sort};
+use palette::{white_point::D65, FromColor, IntoColor, Lab, Srgb};
 
 // reference
 // https://github.com/okaneco/kmeans-colors/blob/master/src/bin/kmeans_colors/app.rs
@@ -42,11 +42,17 @@ fn dominant_colors(file_name: String) -> Result<Vec<String>, String> {
         }
     }
 
+    // sort the result
+    // darkest -> lightest
+    let res = Lab::<D65, f32>::sort_indexed_colors(&best_result.centroids, &best_result.indices);
+
+    // sort by percentage
+    // res.sort_unstable_by(|a, b| (b.percentage).total_cmp(&a.percentage));
+
     // Convert Lab centroids back to Srgb<u8> for output
-    let color_codes: Vec<String> = best_result
-        .centroids
+    let color_codes: Vec<String> = res
         .iter()
-        .map(|x| Srgb::from_color(*x).into_format::<u8>())
+        .map(|x| Srgb::from_color(x.centroid).into_format::<u8>())
         .map(|color| format!("#{:02x}{:02x}{:02x}", color.red, color.green, color.blue))
         .collect();
 
